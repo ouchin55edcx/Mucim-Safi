@@ -1,0 +1,512 @@
+
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+/* hubm */
+/* Importing Google font - Poppins */
+body, html {
+  overflow-x: hidden;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #7B4A2D;
+  z-index: 9999;
+}
+
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar .logo {
+  color: #fff;
+  font-weight: 600;
+  font-size: 2.1rem;
+  text-decoration: none;
+}
+
+.navbar .logo span {
+  color: #C06B3E;
+}
+
+.navbar .menu-links {
+  display: flex;
+  list-style: none;
+  gap: 35px;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.navbar a:hover {
+  color: #C06B3E;
+}
+
+.hero-section {
+  height: 100vh;
+  background-image: url("https://www.codingnepalweb.com/demos/create-responsive-coffee-website-html-css/hero-bg.jpg");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.hero-section .content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  color: #fff;
+}
+
+.hero-section .content h2 {
+  font-size: 3rem;
+  max-width: 600px;
+  line-height: 70px;
+}
+
+.hero-section .content p {
+  font-weight: 300;
+  max-width: 600px;
+  margin-top: 15px;
+}
+
+.hero-section .content button {
+  background: #EAC696;
+  padding: 12px 30px;
+  border: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-top: 38px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.hero-section .content button:hover {
+  color: #fff;
+  background: #C06B3E;
+}
+
+#close-menu-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  cursor: pointer;
+  display: none;
+}
+
+#hamburger-btn {
+  color: #fff;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 10px;
+  }
+
+  header.show-mobile-menu::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+  }
+
+  .navbar .logo {
+    font-size: 1.7rem;
+  }
+
+    
+  #hamburger-btn, #close-menu-btn {
+    display: block;
+  }
+
+  .navbar .menu-links {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 70px 40px 0;
+    transition: left 0.2s ease;
+  }
+
+  header.show-mobile-menu .navbar .menu-links {
+    left: 0;
+  }
+
+  .navbar a {
+    color: #000;
+  }
+
+  .hero-section .content {
+    text-align: center;
+  }
+
+  .hero-section .content :is(h2, p) {
+    max-width: 100%;
+  }
+
+  .hero-section .content h2 {
+    font-size: 2.3rem;
+    line-height: 60px;
+  }
+  
+  .hero-section .content button {
+    padding: 9px 18px;
+  }
+}
+/* humb */
+h1 {
+text-align: center;
+margin-top: 150px;
+}
+/* Masonry image gallery styling */
+.gallery {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 50px; 
+}
+.gallery .images {
+gap: 15px;
+max-width: 85%;
+margin: 40px 0;
+columns: 5 310px;
+list-style: none;
+}
+.gallery .images .img {
+display: flex;
+cursor: pointer;
+overflow: hidden;
+position: relative;
+margin-bottom: 14px;
+border-radius: 4px;
+}
+.gallery .images img {
+width: 100%;
+transition: transform 0.2s ease;
+}
+
+.gallery .images .img:hover img {
+transform: scale(1.1);
+}
+
+/* Image lightbox styling */
+.lightbox {
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+z-index: 5;
+position: fixed;
+visibility: hidden;
+background: rgba(0,0,0,0.65);
+}
+.lightbox.show {
+visibility: visible;
+}
+.lightbox .wrapper {
+position: fixed;
+left: 50%;
+top: 50%;
+width: 100%;
+padding: 20px;
+max-width: 850px;
+background: #fff;
+border-radius: 6px;
+opacity: 0;
+pointer-events: none;
+transform: translate(-50%, -50%) scale(0.9);
+transition: transform 0.1s ease;
+}
+.lightbox.show .wrapper {
+opacity: 1;
+pointer-events: auto;
+transform: translate(-50%, -50%) scale(1);
+}
+.wrapper :where(header, .details) {
+display: flex;
+align-items: center;
+}
+.wrapper header {
+justify-content: space-between;
+}
+header .details i {
+font-size: 1.7rem;
+}
+header .details span {
+font-size: 1.2rem;
+margin-left: 10px;
+}
+header .buttons i {
+height: 40px;
+width: 40px;
+cursor: pointer;
+display: inline-block;
+color: #fff;
+margin-left: 10px;
+background: #6C757D;
+font-size: 1.25rem;
+line-height: 40px;
+text-align: center;
+border-radius: 4px;
+transition: 0.2s ease;
+}
+header .buttons i:hover {
+background: #5f666d;
+}
+.wrapper .preview-img {
+display: flex;
+justify-content: center;
+margin-top: 25px;
+}
+.preview-img .img {
+max-height: 65vh;
+}
+.preview-img img {
+width: 100%;
+height: 100%;
+object-fit: contain;
+}
+
+/* Responsive media query code */
+@media screen and (max-width: 688px) {
+.lightbox .wrapper {
+padding: 12px;
+max-width: calc(100% - 26px);
+}
+.wrapper .preview-img {
+margin-top: 15px;
+}
+.gallery .images {
+max-width: 100%;
+padding: 0 13px;
+margin-top: 20px;
+}
+}
+/* Adjust gallery styles for mobile */
+@media screen and (max-width: 688px) {
+  h1 {
+      margin-top: 70px; /* Adjust the margin for mobile */
+  }
+  .gallery {
+      align-items: center;
+      margin-top: 20px; /* Reduce the top margin */
+  }
+  .gallery .images {
+      max-width: 100%;
+      columns: 3 200px; /* Adjust the number of columns and their width */
+  }
+  .gallery .images .img {
+      margin-bottom: 10px; /* Reduce the margin for mobile */
+  }
+}
+
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #b8482340;
+}
+
+.container {
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #b84823a5;
+  border-radius: 5px;
+  margin-bottom:20px ;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+input {
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 10px;
+  background: #000000;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover{
+  background-color: rgb(172, 63, 4);
+  color: white;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 700px) {
+  .container {
+      width: 90%;
+  }
+
+  input, button {
+      padding: 8px;
+  }
+}
+
+
+
+/* video style   */
+
+
+
+ section {
+  background-color: #c06b3e9c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#video-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+#video {
+  width: 100%;
+  height: auto;
+}
+
+/* Common Footer Styles */
+footer {
+  background-color: rgba(0, 0, 0, 0.363);
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  color: white;
+}
+
+.background {
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.list-group,
+.contact-group {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+.fin {
+  text-align: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Larger Layout Styles (e.g., for screens wider than 700px) */
+@media screen and (min-width: 700px) {
+  footer {
+    height: 100vh;
+  }
+
+  .footer-image {
+    width: 200px;
+    margin-top: -150px;
+    margin-right: -150px;
+  }
+
+  .background {
+    gap: 100px;
+    padding-top: 200px;
+  }
+
+  .right-content {
+    float: left;
+    margin-left: -350px;
+  }
+
+  .right-content ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .right-content li {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Mobile Layout Styles (e.g., for screens narrower than 700px) */
+@media screen and (max-width: 700px) {
+  .footer-image {
+    width: 150px;
+    margin-top: 0;
+    margin-right: 0;
+  }
+
+  .background {
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 50px;
+  }
+
+  .right-content {
+    float: none;
+    margin-left: 0;
+  }
+
+  .right-content ul {
+    text-align: center;
+  }
+
+  .right-content li {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
