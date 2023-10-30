@@ -159,23 +159,4 @@ carousel.addEventListener("touchend", dragStop);
 
 
 
-// button 
-
-const openVideoButton = document.getElementById('openVideoButton');
-const closeVideoButton = document.getElementById('closeVideoButton');
-const videoContent = document.querySelector('.video-content');
-
-openVideoButton.addEventListener('click', () => {
-    videoContent.classList.add('show');
-});
-
-closeVideoButton.addEventListener('click', () => {
-    videoContent.classList.remove('show');
-});
-
-
-// Gallery
-
-
-
 

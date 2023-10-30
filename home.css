@@ -179,18 +179,17 @@ header .navbar {
   }
 }
 
-/* imagr size 500px margin eft 20px */
 /* section  about  */
 
 
 .page {
   margin-right: auto;
   margin-left: auto;
-  max-width: 1200px; /* تغيير هذه القيمة حسب احتياجاتك */
+  max-width: 1200px; 
   padding: 20px;
 }
 
-/* الأنماط الأخرى التي ترغب في تطبيقها على الصفحة الثانية */
+
 
 .three-section {
   background-color: #EAC696;
@@ -228,8 +227,8 @@ header .navbar {
 .left, .right {
   flex: 1;
   text-align: center;
-  margin-right: 10px; /* نفس المسافة على الجانب الأيمن */
-  margin-left: 10px; /* نفس المسافة على الجانب الأيسر */
+  margin-right: 10px; 
+  margin-left: 10px; 
 }
 
 .image {
@@ -246,20 +245,20 @@ header .navbar {
 /* Media query for screens with a max width of 700px (mobile large) */
 @media (max-width: 700px) {
   .three-section h1 {
-    font-size: 40px; /* تعديل حجم الخط للشاشات الصغيرة */
+    font-size: 40px; 
   }
 
   .three-section p {
-    font-size: 0.5em; /* تعديل حجم الخط للشاشات الصغيرة */
+    font-size: 0.5em; 
   }
 
   .left, .right {
-    margin-right: 0; /* إزالة المسافة على الجانب الأيمن لتوفير المزيد من المساحة */
-    margin-left: 0; /* إزالة المسافة على الجانب الأيسر لتوفير المزيد من المساحة */
+    margin-right: 0; 
+    margin-left: 0; 
   }
 
   .image {
-    width: 100%; /* جعل الصورة بعرض كامل للشاشات الصغيرة */
+    width: 100%; 
     height: auto;
   }
 }
@@ -680,7 +679,6 @@ button:hover{
 }
 
 /* FAQ  */
-/* Google Font CDN Link */
 
 .FAQ{
   display: flex;
@@ -823,7 +821,7 @@ button:hover{
 }
 
 /* footer style  */
-/* Styles de base pour la section "footer" */
+
 .footer {
   background-color: #333;
   color: white;
@@ -862,7 +860,7 @@ button:hover{
 /* Styles spécifiques pour les écrans de 700px de largeur et moins */
 @media screen and (max-width: 700px) {
   .footer h3 {
-    font-size: 20px; /* Réduire la taille de la police pour les petits écrans */
+    font-size: 20px; 
   }
 
   .footer p {
