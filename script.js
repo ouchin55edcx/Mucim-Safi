@@ -2,11 +2,17 @@ const header = document.querySelector("header");
 const hamburgerBtn = document.querySelector("#hamburger-btn");
 const closeMenuBtn = document.querySelector("#close-menu-btn");
 
+function toggleMobileMenu() {
+  header.classList.toggle("show-mobile-menu");
+}
 
-hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
+function closeMobileMenu() {
+  hamburgerBtn.click();
+}
 
+hamburgerBtn.addEventListener("click", toggleMobileMenu);
+closeMenuBtn.addEventListener("click", closeMobileMenu);
 
-closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
 
 //FAQ
 
@@ -37,7 +43,7 @@ form.addEventListener("submit", function (e) {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
 
-    // Les expressions régulières pour la validation
+  
     const nomPrenomRegex = /^[A-Za-zÀ-ÿ\s'-]+$/;
     const cinRegex = /^[A-Za-z0-9]+$/;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
